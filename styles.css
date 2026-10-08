@@ -1,0 +1,101 @@
+/* Custom Utilities and Overrides */
+
+/* Glassmorphism Panel */
+.glass-panel {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Tab button active state */
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+/* Custom Scrollbar for better UI */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a; 
+}
+::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569; 
+}
+
+/* Quill Editor Overrides for Dark/Light integration */
+.quill-container .ql-toolbar {
+    border: none !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background-color: #f8fafc;
+    border-radius: 0.75rem 0.75rem 0 0;
+}
+.quill-container .ql-container {
+    border: none !important;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+}
+.quill-container .ql-editor {
+    min-height: 200px;
+}
+
+/* Image preview cards */
+.img-card {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.img-card:active {
+    cursor: grabbing;
+}
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-card .remove-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border-radius: 9999px;
+    padding: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.img-card:hover .remove-btn {
+    opacity: 1;
+}
+.img-card .remove-btn:hover {
+    background: rgba(220, 38, 38, 1);
+}
+
+/* SortableJS drag state styling */
+.sortable-ghost {
+    opacity: 0.4;
+    background-color: #334155;
+}
